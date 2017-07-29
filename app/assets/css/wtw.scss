@@ -1,0 +1,197 @@
+/* ---------------------------- PARTIALS
+*/
+
+@import "partials/box-sizing.scss";
+@import "partials/clearfix.scss";
+@import "partials/reset.scss";
+@import "partials/images.scss";
+@import "partials/font.scss";
+
+/* ---------------------------- VARIABLES
+*/
+$white: #F3F0EC;
+$dark: #242226;
+$borderBottom: 1px solid $dark;
+
+/* ---------------------------- BASE
+*/
+
+body {
+  background-color: #f4f7f6;
+}
+
+/* ---------------------------- LAYOUT
+*/
+
+
+
+/* ---------------------------- MODULES
+*/
+
+/*
+.declaration-order {
+  // Positioning
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+  // Box-model
+  display: block;
+  float: right;
+  width: 100px;
+  height: 100px;
+
+  // Typography
+  font: normal 13px "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+
+  // Visual
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+
+  // Misc
+  opacity: 1;
+}
+*/
+
+/* ---------------------------------------------- header
+*/
+
+.header {
+  background-color: #0a1612;
+}
+.header--wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  max-width: 1080px;
+  color: $white;
+}
+.header--logo {
+  padding: 16px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+/* ------------------------------------ nav
+*/
+
+/* ---------------------------- nav-icon
+*/
+
+.nav-icon {
+  padding: 20px 16px;
+}
+.nav-icon--container {
+  padding: 4.5px 7px;
+  border: 1px solid $white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+%nav-icon--bar {
+  margin: 5px 0;
+  width: 25px;
+  height: 3px;
+  background-color: $white;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+.nav-icon--bar1,
+.nav-icon--bar2,
+.nav-icon--bar3 {
+  @extend %nav-icon--bar ;
+}
+
+/* ---------------------------------------------- main
+*/
+
+.main--wrapper {
+  padding: 16px;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+/* ------------------------------------ movie-list
+*/
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* ---------------------------- movie
+*/
+
+.movie {
+  position: relative;
+  margin-bottom: 24px;
+  padding-right: 24px;
+  width: 50%;
+  &:hover .movie-background--filter {
+    background-color: black;
+    opacity: 0.3;
+    cursor: pointer;
+  }
+  &:nth-of-type(n+5) {
+    width: 33.33%;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .movie {
+    width: 100%;
+  }
+}
+
+.movie-background {
+  position: relative;
+  width: 100%;
+  max-height: 220px;
+  overflow: hidden;
+  transition: filter .3s linear;
+}
+.movie-background--filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.movie--content {
+  position: relative;
+  width: 100%;
+  background-color: #fcfcfc;
+}
+.movie--title {
+  padding: 10px;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: $white;
+}
+.movie--date {
+  padding: 10px;
+  width: 100%;
+  background-color: #0a1612;
+  background-color: #c5c1c0;
+  background-color: #1a2930;
+  color: white;
+}
+.movie--rating {
+  position: absolute;
+  top:0;
+  right:0;
+  padding: 10px;
+  color: $white;
+  background-color: #66CC33;
+}

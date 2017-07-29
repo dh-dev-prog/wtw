@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="movieApp" class="no-js"> <!--<![endif]-->
+    <head>
+      <title> watch this week </title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width = device-width, initial-scale = 1">
+      <meta name="description" content="new movies available to watch on amazon streaming this week">
+      <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+      <link href="assets/css/wtw.css" rel="stylesheet">
+    </head>
+    <body>
+      <header class="header">
+        <div class="header--wrapper">
+          <h1 class="header--logo">Watch This Week</h1>
+          <div class="header--nav">
+            <nav class="nav"></nav>
+            <div class="nav-icon">
+              <div class="nav-icon nav-icon--container">
+                <div class="nav-icon--bar1"></div>
+                <div class="nav-icon--bar2"></div>
+                <div class="nav-icon--bar3"></div>
+              </div>
+            </div>
+          </div>
+          <!--<div class="header--date">
+          </div>-->
+        </div>
+      </header>
+      <main class="main--wrapper">
+        <section class="main--body">
+          <movie-list></movie-list>
+          <div class="movie-genre">
+            <h4 class="movie-genre--hover"> Genre ++</h4>
+            <ul class="movie-genre--list">
+            </ul>
+          </div>
+        </section>
+      </main>
+
+
+
+      <!-- In production use:
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+      -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script src="app.module.js"></script>
+      <script src="movie-list/movie-list.module.js"></script>
+      <script src="movie-list/movie-list.component.js"></script>
+      <!--<script src="view1/view1.js"></script>-->
+      <!--<script src="view2/view2.js"></script>-->
+      <!--<script src="components/version/version.js"></script>-->
+      <!--<script src="components/version/version-directive.js"></script>-->
+      <!--<script src="components/version/interpolate-filter.js"></script>-->
+      <!--my script native <script src="assets/js/wtw.js"></script>-->
+      <!--my script angular <script src="assets/js/app.js"></script>-->
+    </body>
+</html>
