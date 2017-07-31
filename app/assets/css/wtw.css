@@ -153,7 +153,9 @@ body {
 /* ---------------------------------------------- header
 */
 .header {
-  background-color: #0a1612; }
+  background-color: #0a1612;
+  background-color: #f5da55;
+  background-color: #323330; }
 
 .header--wrapper {
   display: flex;
@@ -177,8 +179,6 @@ body {
 
 .nav-icon--container {
   padding: 4.5px 7px;
-  border: 1px solid #F3F0EC;
-  border-radius: 5px;
   cursor: pointer; }
 
 .nav-icon--bar1,
@@ -205,6 +205,42 @@ body {
   flex-wrap: wrap;
   align-items: flex-start;
   width: 100%; }
+
+/* ---------------------------- sort-buttons
+*/
+.sortorder:after {
+  content: '\25b2'; }
+
+.sortorder.reverse:after {
+  content: '\25bc'; }
+
+/* ---------------------------- movie-genre
+*/
+.movie-genre {
+  position: relative;
+  width: 150px;
+  background-color: silver;
+  cursor: pointer; }
+
+.movie-genre:hover .tag--list {
+  display: block; }
+
+.movie-genre--hover:hover,
+.tag:hover {
+  background-color: blue; }
+
+.tag--list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: 50; }
+
+.tag {
+  display: block;
+  z-index: 10;
+  background-color: silver;
+  cursor: pointer; }
 
 /* ---------------------------- movie
 */

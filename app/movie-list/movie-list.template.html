@@ -1,12 +1,31 @@
-<div class="header--search search">
+<p class="header--search search">
+  <!--Scope problem when using ng-model in template of a component-->
   Search: <input ng-model="$ctrl.query.title" type="text" class="search--bar"></input>
   <i class="search--icon"></i>
+</p>
+
+<button ng-click="$ctrl.sortBy('title')">Title
+  <span class="sortorder" ng-show="$ctrl.propertyName === 'title'" ng-class="{reverse: $ctrl.reverse}"></span>
+</button>
+<button ng-click="$ctrl.sortBy('date')">Date
+  <span class="sortorder" ng-show="$ctrl.propertyName === 'date'" ng-class="{reverse: $ctrl.reverse}"></span>
+</button>
+<button ng-click="$ctrl.sortBy('rating')">Rating
+  <span class="sortorder" ng-show="$ctrl.propertyName === 'rating'" ng-class="{reverse: $ctrl.reverse}"></span>
+</button>
+
+<div class="movie-genre">
+  <h4 class="movie-genre--hover"> Genre </h4>
+  <ul class="tag--list">
+    <li class="tag" ng-repeat="(key, value) in $ctrl.taglist" ng-click="$ctrl.byTag(value)">{{key}}</li>
+  </ul>
 </div>
+
 <ul class="movie-list">
-  <li class="movie" ng-repeat="movie in $ctrl.movies | filter: $ctrl.query">
+  <li class="movie" ng-repeat="movie in $ctrl.movies | filter: $ctrl.query | orderBy:$ctrl.propertyName:$ctrl.reverse">
     <div class="movie-background">
       <div class="movie-background--filter"></div>
-      <img class="movie-background--image" ng-src="{{movie.background}}" alt="{{movie.title}} background" />
+      <img class="movie-background--image" ng-src="{{movie.background}}" alt="{{movie.title}} background image" />
     </div>
     <div class="movie--content">
       <h4 class="movie--date">{{movie.date}}</h4>
