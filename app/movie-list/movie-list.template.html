@@ -1,6 +1,9 @@
 <p class="header--search search">
   <!--Scope problem when using ng-model in template of a component-->
-  Search: <input ng-model="$ctrl.query.title" type="text" class="search--bar"></input>
+  <label>
+    LiveSearch: <input ng-model="$ctrl.query.title" type="text" class="search--bar"></input>
+    <small> It's not a database ... yet </small>
+  </label>
   <i class="search--icon"></i>
 </p>
 

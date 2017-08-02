@@ -12,11 +12,10 @@ component('movieList', {
       //when the controller is being constructed
 
       var self = this;
-
       //Since we are making the assignment of the movies property in a callback function,
       //where the this value is not defined, we also introduce a local variable called self
       //that points back to the controller instance.
-      $http.get('movies/movies.json').then(function(response){
+      $http.get('https://dh-dev-prog.github.io/wtw/app/movies/movies.json').then(function(response){
         var taglist = {};
         self.movies = response.data.movies;
 
@@ -29,6 +28,8 @@ component('movieList', {
           })
         })
         self.taglist = taglist;
+      }).catch(function(e){
+        console.log('Error:', e);
       })
 
       this.propertyName = 'date'; //default order
@@ -40,7 +41,6 @@ component('movieList', {
       this.byTag = function(array){
         this.movies = array;
       }
-      console.log(this);
     }
   ]
 })

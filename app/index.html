@@ -14,37 +14,20 @@
       <link href="assets/css/wtw.css" rel="stylesheet">
     </head>
     <body>
-      <header class="header">
-        <div class="header--wrapper">
-          <h1 class="header--logo">Watch This Week</h1>
-          <div class="header--nav">
-            <nav class="nav"></nav>
-            <div class="nav-icon">
-              <div class="nav-icon nav-icon--container">
-                <div class="nav-icon--bar1"></div>
-                <div class="nav-icon--bar2"></div>
-                <div class="nav-icon--bar3"></div>
-              </div>
-            </div>
-          </div>
-          <!--<div class="header--date">
-          </div>-->
-        </div>
-      </header>
+      <app-header></app-header>
       <main class="main--wrapper">
         <section class="main--body">
           <movie-list></movie-list>
-
         </section>
       </main>
-
-
 
       <!-- In production use:
       <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
       -->
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
       <script src="app.module.js"></script>
+      <script src="header/header.module.js"></script>
+      <script src="header/header.component.js"></script>
       <script src="movie-list/movie-list.module.js"></script>
       <script src="movie-list/movie-list.component.js"></script>
       <!--<script src="view1/view1.js"></script>-->
