@@ -13,12 +13,15 @@ $white: #F3F0EC;
 $dark: #242226;
 $borderBottom: 1px solid $dark;
 
+$transition--search: all .15s linear;
+
 /* ---------------------------- BASE
 */
 
 body {
   background-color: #f4f7f6;
 }
+
 
 /* ---------------------------- LAYOUT
 */
@@ -64,13 +67,12 @@ body {
 */
 
 .header {
-  margin-bottom: 16px;
   background-color: #0a1612;
   background-color: #f5da55;
   background-color: #323330;
   overflow: hidden; //hide the nav
   height: 80px; //height of top header without border-bottom
-  transition: height .2s linear;
+  transition: $transition--search;
 }
 .header--wrapper {
   display: flex;
@@ -85,6 +87,10 @@ body {
 .header--logo {
   padding: 8px;
   font-family: 'Permanent Marker', cursive;
+}
+.header--close {
+  transform: translateY(-80px);
+  transition: all .2s linear;
 }
 
 /* ------------------------------------ nav
@@ -130,13 +136,63 @@ body {
   @extend %nav-icon--bar ;
 }
 
+/* ---------------------------------------------- filters
+*/
+
+.filter {
+  transition: $transition--search;
+}
+.filter-background {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 230px;
+  width: 100vw;
+  overflow: hidden;
+}
+.filter-background--whiteScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $white;
+  opacity: 0.1;
+}
+.filter--search {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: $white;
+  input {
+    width: 33vw;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 40px;
+    outline: none;
+    transition: $transition--search;
+    &:focus {
+      width: 60vw;
+    }
+  };
+}
+
 /* ---------------------------------------------- main
 */
 
 .main--wrapper {
-  padding: 16px;
+  padding: 0 16px;
   margin: 0 auto;
   max-width: 960px;
+  transition: $transition--search;
 }
 
 /* ------------------------------------ movie-list
@@ -162,35 +218,31 @@ body {
 /* ---------------------------- movie-genre
 */
 
-.movie-genre {
-  position: relative;
-  width: 150px;
-  background-color: silver;
-  cursor: pointer;
+.tags {
+  display: flex;
+  justify-content: center;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
 }
-.movie-genre {
-  &:hover .tag--list {
-    display: block;
-  }
-}
-.movie-genre--hover,
 .tag {
+  display: inline-block;
+  padding: 5px;
+  margin: 0 5px;
+  font-size: 14px;
+  color: $dark;
+  border: 1px solid $dark;
+  border-radius: 10px;
+  background-color: $white;
+  cursor: pointer;
   &:hover {
-    background-color: blue;
+    background-color: $dark;
+    color: $white;
   }
 }
-.tag--list {
-  position: absolute;
-  left: 0;
-  right: 0;
-  display: none;
-  z-index: 50;
-}
-.tag {
-  display: block;
-  z-index: 10;
-  background-color: silver;
-  cursor: pointer;
+.tag.is-active {
+  background-color: $dark;
+  color: $white;
 }
 
 /* ---------------------------- movie

@@ -24,7 +24,7 @@
       "director": "James Mangold",
       "actor": ["Hugh Jackman", "Patrick Stewart", "Dafne Keen"],
       "trailer": "http://www.imdb.com/videoembed/vi1946727961",
-      "hero": true
+      "hero": false
     },
     {
       "title": "guardians of the galaxy vol.2",
@@ -50,7 +50,7 @@
       "director": "James Gunn",
       "actor": ["Ansel Elgort", "Jon Bernthal", "Jon Hamm"],
       "trailer": "http://www.imdb.com/videoembed/vi2482288921",
-      "hero": false
+      "hero": true
     },
     {
       "title": "dunkirk",
