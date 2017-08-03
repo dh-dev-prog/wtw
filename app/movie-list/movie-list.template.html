@@ -1,48 +1,44 @@
 <section class="filter">
   <div class="filter-background">
     <img ng-src={{$ctrl.hero.background}} alt="{{$ctrl.hero.title}} is the movie of the week">
+
     <div class="filter-background--whiteScreen"></div>
     <div class="filter--search">
       <!--Scope problem when using ng-model in template of a component-->
       <label>
-        <input class="filter--search-input" ng-focus='$ctrl.focusSearch()' ng-blur='$ctrl.focusSearch()' ng-model="$ctrl.query.title" type="text" placeholder="Search Movie Live"></input>
+        <input class="filter--search-input" ng-focus='$ctrl.focusSearch()' ng-blur='$ctrl.focusSearch()'
+               ng-model="$ctrl.query.title" type="text" placeholder="Search Movie Live"></input>
       </label>
     </div>
+    <h2 class="filter-background--title"> {{$ctrl.hero.title}}</h2>
   </div>
 
-  <div class="tags">
-    <ul class="tag--list">
-      <li class="tag" ng-repeat="(key, value) in $ctrl.taglist" ng-click="$ctrl.byTag(value, $event)">{{key}}</li>
-    </ul>
-  </div>
-
-  <button class="filter-tools--open">open tools</button>
-  <div class="filter-tools">
-    <div class="filter--tags">
+  <section class="filter--tools">
+    <div class="sortorder--container">
+      <button class="sortorder--button sortorder--title" ng-click="$ctrl.sortBy('title')">Title
+        <span class="sortorder" ng-show="$ctrl.propertyName === 'title'" ng-class="{reverse: $ctrl.reverse}"></span>
+      </button>
+      <button class="sortorder--button sortorder--data" ng-click="$ctrl.sortBy('date')">Date
+        <span class="sortorder" ng-show="$ctrl.propertyName === 'date'" ng-class="{reverse: $ctrl.reverse}"></span>
+      </button>
+      <button class="sortorder--button sortorder--rating" ng-click="$ctrl.sortBy('rating')">Rating
+        <span class="sortorder" ng-show="$ctrl.propertyName === 'rating'" ng-class="{reverse: $ctrl.reverse}"></span>
+      </button>
     </div>
-    <div class="filters--sort">
+    <div class="tags">
+      <ul class="tag--list">
+        <li class="tag" ng-repeat="(key, value) in $ctrl.taglist" ng-click="$ctrl.byTag(value, $event)">{{key}}</li>
+      </ul>
     </div>
-  </div>
-
-  <button ng-click="$ctrl.sortBy('title')">Title
-    <span class="sortorder" ng-show="$ctrl.propertyName === 'title'" ng-class="{reverse: $ctrl.reverse}"></span>
-  </button>
-  <button ng-click="$ctrl.sortBy('date')">Date
-    <span class="sortorder" ng-show="$ctrl.propertyName === 'date'" ng-class="{reverse: $ctrl.reverse}"></span>
-  </button>
-  <button ng-click="$ctrl.sortBy('rating')">Rating
-    <span class="sortorder" ng-show="$ctrl.propertyName === 'rating'" ng-class="{reverse: $ctrl.reverse}"></span>
-  </button>
-
+  </section>
 
 </section>
 
 <div class="main--wrapper">
-  <div> {{$ctrl.movies.length}} movies corresponding </div>
   <ul class="movie-list">
     <li class="movie" ng-repeat="movie in $ctrl.movies | filter: $ctrl.query | orderBy:$ctrl.propertyName:$ctrl.reverse">
       <div class="movie-background">
-        <div class="movie-background--filter"></div>
+        <div class="movie-background--filter">{{movie.title}}</div>
         <img class="movie-background--image" ng-src="{{movie.background}}" alt="{{movie.title}} background image" />
       </div>
       <div class="movie--content">

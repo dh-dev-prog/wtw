@@ -19,12 +19,12 @@ component('movieList', {
         //when I get the data from the request and only when,
         //if console.log(self.movies) after the http.request, it will log undefined, undefined
         //'this' is not defined here because $http is a callback function. so we use self
-        var taglist = {};
-        self.movies = response.data.movies;
-
-        self.hero = self.movies.find(function(movie){
+        self.hero = response.data.movies.find(function(movie){
             return movie.hero;
         });
+
+        var taglist = {};
+        self.movies = response.data.movies;
 
         self.movies.forEach(function(movie){
           movie.genre.forEach(function(tag){
