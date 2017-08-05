@@ -66,6 +66,27 @@ component('movieList', {
         document.querySelector('.main--wrapper').classList.toggle('header--close');
         document.querySelector('.filter--search-input').value = "";
       }
+      this.showFull = function($event){
+        console.log($event, $event.currentTarget);
+        var movie = document.getElementsByClassName('movie');
+        var movieFull = document.getElementsByClassName('movie-full');
+        var movieContent = document.getElementsByClassName('movie--content');
+        Array.prototype.forEach.call(movie, function(movie){
+          movie.classList.remove('movie--open');
+        })
+        Array.prototype.forEach.call(movieFull, function(movie){
+          movie.classList.remove('movie-full--open');
+        })
+        Array.prototype.forEach.call(movieContent, function(movie){
+          movie.classList.remove('movie--content-open');
+        })
+        Array.prototype.forEach.call(movieContent, function(movie){
+          movie.classList.remove('movie--content-open');
+        })
+        $event.currentTarget.classList.toggle('movie--open');
+        $event.currentTarget.querySelector('.movie-full').classList.toggle('movie-full--open');
+        $event.currentTarget.querySelector('.movie--content').classList.toggle('movie--content-open');
+      }
     }
   ]
 })

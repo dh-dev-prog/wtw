@@ -297,7 +297,7 @@ body {
 .main--wrapper {
   padding: 0 16px;
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1080px;
   transition: all 0.15s linear; }
 
 /* ---------------------------- sort-buttons
@@ -363,6 +363,7 @@ body {
 /* ------------------------------------ movie-list
 */
 .movie-list {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   width: 100%; }
@@ -370,7 +371,6 @@ body {
 /* ---------------------------- movie
 */
 .movie {
-  position: relative;
   margin-bottom: 24px;
   width: 100%; }
   .movie:hover .movie-background--filter {
@@ -406,19 +406,25 @@ body {
   bottom: 0;
   display: none;
   padding: 16px;
-  text-transform: uppercase;
-  font-style: italic;
-  text-align: center;
-  word-spacing: 2px;
-  color: white;
   background-color: #323330;
-  opacity: 0.5;
+  opacity: 0.25;
   cursor: pointer; }
 
 .movie--content {
   position: relative;
   width: 100%;
   background-color: #fcfcfc; }
+
+.movie--content-open::after {
+  position: absolute;
+  left: calc(50% - 10px);
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #323330; }
 
 .movie--title {
   padding: 10px;
@@ -445,5 +451,27 @@ body {
   padding: 10px;
   color: #F3F0EC;
   background-color: #66CC33; }
+
+.movie-full {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: none;
+  width: 100%;
+  padding: 16px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #323330; }
+
+.movie--open {
+  margin-bottom: 330px; }
+
+.movie-full--open {
+  display: flex; }
+
+.movie-full--content {
+  padding: 0 16px;
+  text-transform: capitalize;
+  color: #F3F0EC; }
 
 /*# sourceMappingURL=wtw.css.map */

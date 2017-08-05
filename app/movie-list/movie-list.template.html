@@ -1,7 +1,7 @@
 <section class="filter">
   <div class="filter-background">
     <img ng-src={{$ctrl.hero.background}} alt="{{$ctrl.hero.title}} is the movie of the week">
-
+    <!--<img ng-repeat='movie in $ctrl.movies' ng-if="movie.hero" ng-src={{movie.background}} alt="{{movie.title}} is the movie of the week">-->
     <div class="filter-background--whiteScreen"></div>
     <div class="filter--search">
       <!--Scope problem when using ng-model in template of a component-->
@@ -36,15 +36,29 @@
 
 <div class="main--wrapper">
   <ul class="movie-list">
-    <li class="movie" ng-repeat="movie in $ctrl.movies | filter: $ctrl.query | orderBy:$ctrl.propertyName:$ctrl.reverse">
+    <li class="movie"
+        ng-repeat="movie in $ctrl.movies | filter: $ctrl.query | orderBy:$ctrl.propertyName:$ctrl.reverse"
+        ng-click="$ctrl.showFull($event)">
       <div class="movie-background">
-        <div class="movie-background--filter">{{movie.title}}</div>
+        <div class="movie-background--filter"></div>
         <img class="movie-background--image" ng-src="{{movie.background}}" alt="{{movie.title}} background image" />
       </div>
       <div class="movie--content">
-        <h4 class="movie--date">{{movie.date}}</h4>
+        <h4 class="movie--date">{{movie.date | date}}</h4>
         <h4 class="movie--rating">{{movie.rating}}</h4>
         <h3 class="movie--title">{{movie.title}}</h3>
+      </div>
+      <div class="movie-full">
+        <img class="movie-full--image" ng-src="{{movie.image}}" />
+        <div class="movie-full--content">
+          <h2>{{movie.title}}</h2>
+          <p>
+            {{movie.synopsis}}
+          </p>
+          <p>
+            <span ng-repeat="actor in movie.actor">{{actor}}<span ng-hide="$last">, </span></span>
+          </p>
+        </div>
       </div>
     </li>
   </ul>
