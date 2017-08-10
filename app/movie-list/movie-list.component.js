@@ -66,26 +66,46 @@ component('movieList', {
         document.querySelector('.main--wrapper').classList.toggle('header--close');
         document.querySelector('.filter--search-input').value = "";
       }
-      this.showFull = function($event){
-        console.log($event, $event.currentTarget);
+      this.showFull = function($event, $index){
+
         var movie = document.getElementsByClassName('movie');
         var movieFull = document.getElementsByClassName('movie-full');
         var movieContent = document.getElementsByClassName('movie--content');
         Array.prototype.forEach.call(movie, function(movie){
-          movie.classList.remove('movie--open');
+          movie.classList.remove('movie--open-0');
+          movie.classList.remove('movie--open-1');
+          movie.classList.remove('movie--open-2');
         })
         Array.prototype.forEach.call(movieFull, function(movie){
           movie.classList.remove('movie-full--open');
         })
-        Array.prototype.forEach.call(movieContent, function(movie){
+        /*Array.prototype.forEach.call(movieContent, function(movie){
           movie.classList.remove('movie--content-open');
         })
         Array.prototype.forEach.call(movieContent, function(movie){
           movie.classList.remove('movie--content-open');
-        })
-        $event.currentTarget.classList.toggle('movie--open');
-        $event.currentTarget.querySelector('.movie-full').classList.toggle('movie-full--open');
-        $event.currentTarget.querySelector('.movie--content').classList.toggle('movie--content-open');
+        })*/
+        var name = 'movie--open-';
+        function indexRecursive(index){
+          console.log(index);
+            if(index === 0) return name += '0';
+            if(index === 1) return name += '1';
+            if(index === 2) return name += '2';
+            return indexRecursive(index - 3); //have to return the outer function or it yields undefined
+            //A function that does not execute return will yield undefined.
+            //for index=3, on second turn, if(index===0) return name...it returns +='0' to that function call,
+            //which never gets returned to the original function call indexRecursive(index - 3).
+            //So the solution is simply to add a return before the one where it calls itself.
+            //So return name will be returned to the function that called it. if no return index will change but
+            //return name will stay flying somewhere
+         }
+
+         var className = indexRecursive($index);
+         console.log(className);
+         $event.currentTarget.classList.toggle(className);
+         $event.currentTarget.querySelector('.movie-full').classList.toggle('movie-full--open');
+
+        /*$event.currentTarget.querySelector('.movie--content').classList.toggle('movie--content-open');*/
       }
     }
   ]

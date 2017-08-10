@@ -236,9 +236,8 @@ body {
 */
 
 .main--wrapper {
-  padding: 0 16px;
+  padding: 0 32px;
   margin: 0 auto;
-  max-width: 1080px;
   transition: $transition--search;
 }
 
@@ -315,13 +314,17 @@ body {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   width: 100%;
+  padding-left: 24px;
 }
 
 /* ---------------------------- movie
 */
 
 .movie {
+  position: relative;
+  margin-right: 24px;
   margin-bottom: 24px;
   width: 100%;
   &:hover .movie-background--filter {
@@ -333,20 +336,20 @@ body {
 @media only screen and (min-width: 630px) {
   .movie {
     margin-right: 24px;
-    width: calc((100% - 24px)/2);
+    width: calc((100% - 48px)/2);
     &:nth-of-type(2n) {
-      margin-right: 0;
+      /*margin-right: 0;*/
     }
   }
 }
 @media only screen and (min-width: 960px) {
   .movie {
-    width: calc((100% - 48px) / 3);
+    width: calc((100% - 72px) / 3);
     &:nth-of-type(2n) {
       margin-right: 24px;
     }
     &:nth-of-type(3n) {
-      margin-right: 0;
+      /*margin-right: 0;*/
     }
   }
 }
@@ -415,17 +418,13 @@ body {
 }
 .movie-full {
   position: absolute;
-  left: 0;
-  right: 0;
+  top: 0;
+  bottom: 0;
   display: none;
-  width: 100%;
+  width: calc(300% + 48px);
   padding: 16px;
-  margin-top: 10px;
-  border-radius: 5px;
   background-color: $dark;
-}
-.movie--open {
-  margin-bottom: 330px;
+  z-index: 1000;
 }
 .movie-full--open {
   display: flex;
@@ -434,4 +433,15 @@ body {
   padding: 0 16px;
   text-transform: capitalize;
   color: $white;
+  z-index: 1000;
+}
+.movie--open-1 {
+  transform: translateX(calc(-100% - 24px));
+  z-index: 1000; //because it is moved from its orginial position compare to 0, and 3 is last child
+  //if remove translateX we can see that z-index works (above the next one) but dont move
+  //it appears translateX modify the z-index 
+}
+.movie--open-2 {
+  transform: translateX(calc(-200% - 48px));
+
 }

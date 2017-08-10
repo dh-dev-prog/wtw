@@ -38,7 +38,7 @@
   <ul class="movie-list">
     <li class="movie"
         ng-repeat="movie in $ctrl.movies | filter: $ctrl.query | orderBy:$ctrl.propertyName:$ctrl.reverse"
-        ng-click="$ctrl.showFull($event)">
+        ng-click="$ctrl.showFull($event, $index)">
       <div class="movie-background">
         <div class="movie-background--filter"></div>
         <img class="movie-background--image" ng-src="{{movie.background}}" alt="{{movie.title}} background image" />
