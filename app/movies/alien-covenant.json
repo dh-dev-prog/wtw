@@ -1,0 +1,14 @@
+{
+  "id": "alien-covenant",
+  "title": "alien: covenant",
+  "image": "src/image/poster/alien_covenant_poster.jpg",
+  "background": "src/image/background/alien_covenant_bg.jpg",
+  "synopsis": "The crew of a colony ship, bound for a remote planet, discover an uncharted paradise with a threat beyond their imagination, and must attempt a harrowing escape.",
+  "genre": ["Horror", "Sci-Fi", "Thriller"],
+  "rating": "6,7",
+  "date": "2017-08-15",
+  "director": "Ridely Scott",
+  "actor": ["Michael Fassbender", "Katherine Waterston", "Billy Crudup"],
+  "trailer": "http://www.imdb.com/videoembed/vi3276781081",
+  "hero": false
+}

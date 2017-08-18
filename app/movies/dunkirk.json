@@ -1,0 +1,14 @@
+{
+  "id": "dunkirk",
+  "title": "dunkirk",
+  "image": "src/image/poster/dunkirk_poster.jpg",
+  "background": "src/image/background/dunkirk_bg.jpg",
+  "synopsis": "Allied soldiers from Belgium, the British Empire and France are surrounded by the German army and evacuated during a fierce battle in World War II.",
+  "genre": ["Action", "Drama", "History"],
+  "rating": "9,2",
+  "date": "2017-11-26",
+  "director": "Christopher Nolan",
+  "actor": ["Fionn Whitehead", "Damien Bonnard", "Aneurin Barnard"],
+  "trailer": "http://www.imdb.com/videoembed/vi3402283289",
+  "hero": false
+}

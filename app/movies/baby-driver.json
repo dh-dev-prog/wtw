@@ -1,0 +1,14 @@
+{
+  "id": "baby-driver",
+  "title": "baby driver",
+  "image": "src/image/poster/baby_driver_poster.jpg",
+  "background": "src/image/background/baby_driver_bg.jpg",
+  "synopsis": "After being coerced into working for a crime boss, a young getaway driver finds himself taking part in a heist doomed to fail.",
+  "genre": ["Action", "Crime", "Music"],
+  "rating": "8,3",
+  "date": "2017-11-05",
+  "director": "James Gunn",
+  "actor": ["Ansel Elgort", "Jon Bernthal", "Jon Hamm"],
+  "trailer": "http://www.imdb.com/videoembed/vi2482288921",
+  "hero": true
+}

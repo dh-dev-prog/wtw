@@ -23,7 +23,7 @@ describe('movieList', function() {
     });
 
     it('should set a default value for the `orderProp` property', function() {
-      expect(ctrl.orderProp).toBe('date');
+      expect(ctrl.propertyName).toBe('date');
     });
 
 

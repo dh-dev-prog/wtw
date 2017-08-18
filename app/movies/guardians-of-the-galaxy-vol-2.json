@@ -1,0 +1,14 @@
+{
+  "id": "guardians-of-the-galaxy-vol-2",
+  "title": "guardians of the galaxy vol.2",
+  "image": "src/image/poster/guardians_of_the_galaxy_vol2_poster.jpg",
+  "background": "src/image/background/guardians_of_the_galaxy_vol2_bg.jpg",
+  "synopsis": "The Guardians must fight to keep their newfound family together as they unravel the mystery of Peter Quill's true parentage.",
+  "genre": ["Action", "Adventure", "Sci-Fi"],
+  "rating": "8,1",
+  "date": "2017-08-22",
+  "director": "James Gunn",
+  "actor": ["Chris Pratt", "Zoe Saldana", "Dave Bautista" ],
+  "trailer": "http://www.imdb.com/videoembed/vi3076896281",
+  "hero": false
+}

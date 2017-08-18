@@ -11,28 +11,35 @@
       <meta name="description" content="new movies available to watch on amazon streaming this week">
       <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-      <link href="assets/css/wtw.css" rel="stylesheet">
+      <link href="dist/css/wtw.css" rel="stylesheet">
     </head>
     <body>
       <app-header></app-header>
-      <app-filters></app-filters>
-      <main>
-        <section class="main--body">
-          <movie-list></movie-list>
-        </section>
-      </main>
+      <main ng-view></main>
 
       <!-- In production use:
       <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
       -->
+
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
       <script src="app.module.js"></script>
+      <script src="app.config.js"></script>
+      <script src="core/movie/movie.module.js"></script>
+      <script src="core/movie/movie.service.js"></script>
+      <script src="core/search/search.module.js"></script>
+      <script src="core/search/search.service.js"></script>
       <script src="header/header.module.js"></script>
       <script src="header/header.component.js"></script>
+      <script src="hero/hero.module.js"></script>
+      <script src="hero/hero.component.js"></script>
       <script src="filters/filters.module.js"></script>
       <script src="filters/filters.component.js"></script>
       <script src="movie-list/movie-list.module.js"></script>
       <script src="movie-list/movie-list.component.js"></script>
+      <script src="movie-detail/movie-detail.module.js"></script>
+      <script src="movie-detail/movie-detail.component.js"></script>
       <!--<script src="view1/view1.js"></script>-->
       <!--<script src="view2/view2.js"></script>-->
       <!--<script src="components/version/version.js"></script>-->

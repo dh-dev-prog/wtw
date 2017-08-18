@@ -1,0 +1,14 @@
+{
+  "id": "john-wick-2",
+  "title": "john wick 2",
+  "image": "src/image/poster/john_wick_2_poster.jpg",
+  "background": "src/image/background/john_wick_2_bg.jpg",
+  "synopsis": "John Wick is forced out of retirement, and this time, he must face off against a shadowy international assassins'guild and more of the world's deadliest killers.",
+  "genre": ["Action", "Crime", "Thriller"],
+  "rating": "7,7",
+  "date": "2017-06-13",
+  "director": "Chad Stahelski",
+  "actor": ["Keanu Reeves", "Riccardo Scamarcio", "Ian McShane"],
+  "trailer": "http://www.imdb.com/videoembed/vi1127331353",
+  "hero": false
+}

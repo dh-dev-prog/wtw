@@ -1,0 +1,14 @@
+{
+  "id": "wonder-woman",
+  "title": "wonder woman",
+  "image": "src/image/poster/wonder_woman_poster.jpg",
+  "background": "src/image/background/wonder_woman_bg.jpg",
+  "synopsis": "The crew of a colony ship, bound for a remote planet, discover an uncharted paradise with a threat beyond their imagination, and must attempt a harrowing escape.",
+  "genre": ["Action", "Adventure", "Fantasy"],
+  "rating": "7,9",
+  "date": "2017-08-30",
+  "director": "Patty Jenkins",
+  "actor": ["Gal Gadot", "Chris Pine", "Robin Wright"],
+  "trailer": "http://www.imdb.com/videoembed/vi1553381657",
+  "hero": false
+}

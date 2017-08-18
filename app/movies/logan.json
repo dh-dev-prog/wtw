@@ -1,0 +1,14 @@
+{
+  "id": "logan",
+  "title": "logan",
+  "image": "src/image/poster/logan_poster.jpg",
+  "background": "src/image/background/logan_bg.jpg",
+  "synopsis": "In the near future, Logan's attempts to hide out on the Mexican border with an ailing Professor X are up-ended when a young mutant arrives, being pursued by dark forces.",
+  "genre": ["Action", "Drama", "Sci-Fi"],
+  "rating": "8,2",
+  "date": "2017-05-23",
+  "director": "James Mangold",
+  "actor": ["Hugh Jackman", "Patrick Stewart", "Dafne Keen"],
+  "trailer": "http://www.imdb.com/videoembed/vi1946727961",
+  "hero": false
+}

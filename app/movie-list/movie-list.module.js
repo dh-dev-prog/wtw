@@ -1,3 +1,6 @@
 'use strict';
 
-angular.module('movieList', []);
+angular.module('movieList', [
+  'core.movie',
+  'core.search'
+]);

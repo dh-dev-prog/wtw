@@ -6,42 +6,44 @@ module('movieList').
 component('movieList', {
   // Note: The URL is relative to our `index.html` file
   templateUrl: 'movie-list/movie-list.template.html',
-  controller: ['$http',
-    function MovieListController($http){
+  controller: ['Movie', 'searchQuery',
+    function MovieListController(Movie, searchQuery){
       //AngularJS's dependency injector provides services to your controller,
       //when the controller is being constructed
 
       var self = this;
+      this.taglist = {};
+
+      this.movies = Movie.query(function(response){
+        var movies = response;
+        movies.forEach(function(movie){
+          movie.genre.forEach(function(tag){
+            if(!self.taglist[tag]) {
+              self.taglist[tag] = [];
+            }
+            self.taglist[tag].push(movie);
+          })
+        })
+      });
+
+      /*var self = this;
       //Since we are making the assignment of the movies property in a callback function,
       //where the this value is not defined, we also introduce a local variable called self
       //that points back to the controller instance.
-      $http.get('https://dh-dev-prog.github.io/wtw/app/movies/movies.json').then(function(response){
+      $http.get('movies/movies.json').then(function(response){
         //when I get the data from the request and only when,
         //if console.log(self.movies) after the http.request, it will log undefined, undefined
         //'this' is not defined here because $http is a callback function. so we use self
-        self.hero = response.data.movies.find(function(movie){
-            return movie.hero;
-        });
 
-        var taglist = {};
-        self.movies = response.data.movies;
+*/
 
-        self.movies.forEach(function(movie){
-          movie.genre.forEach(function(tag){
-            if(!taglist[tag]) {
-              taglist[tag] = [];
-            }
-            taglist[tag].push(movie);
-          })
-        })
-        self.taglist = taglist;
 
-      }).catch(function(e){
-        console.log('Error:', e);
-      })
+
 
       this.propertyName = 'date'; //default order
       this.reverse = false;
+
+      this.query = searchQuery.getQuery();
 
       this.sortBy = function(propertyName){
         this.reverse = (this.propertyName === propertyName) ? !this.reverse : false;
@@ -60,14 +62,8 @@ component('movieList', {
           $event.currentTarget.classList.remove('is-active');
         }
       }
-      this.focusSearch = function(query){
-        document.querySelector('.header').classList.toggle('header--close');
-        document.querySelector('.filter').classList.toggle('header--close');
-        document.querySelector('.main--wrapper').classList.toggle('header--close');
-        document.querySelector('.filter--search-input').value = "";
-      }
-      this.showFull = function($event, $index){
 
+      this.showFull = function($event, $index){
         var movie = document.getElementsByClassName('movie');
         var movieFull = document.getElementsByClassName('movie-full');
         var movieContent = document.getElementsByClassName('movie--content');

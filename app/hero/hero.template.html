@@ -1,0 +1,15 @@
+<section class="filter">
+  <div class="filter-background">
+    <img ng-src={{$ctrl.hero.background}} alt="{{$ctrl.hero.alt}}">
+    <!--<img ng-repeat='movie in $ctrl.movies' ng-if="movie.hero" ng-src={{movie.background}} alt="{{movie.title}} is the movie of the week">-->
+    <div class="filter-background--whiteScreen"></div>
+
+    <div class="filter--search">
+      <!--Scope problem when using ng-model in template of a component-->
+      <label>
+        <input class="filter--search-input" ng-blur='$ctrl.focusSearch()'
+               ng-model="$ctrl.query" type="text" placeholder="Search Movie Live"></input>
+      </label>
+    </div>
+    <h2 class="filter-background--title"> {{$ctrl.hero.title}}</h2>
+  </div>
